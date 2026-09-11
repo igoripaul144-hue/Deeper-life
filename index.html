@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome, First Timer | Deeper Life Campus Fellowship</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <img class="logo" src="logo.jpg" alt="Deeper Life Bible Church logo" width="48" height="48">
+    <div class="wordmark">
+      <strong>Deeper Life Campus Fellowship</strong>
+      <span>First-timer welcome</span>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container grid">
+    <div>
+      <h1>Welcome. You've found a place that will go deeper with you.</h1>
+      <p class="verse">
+        "Deep calleth unto deep."
+        <cite>Psalm 42:7</cite>
+      </p>
+      <p class="lede">
+        We're glad you worshipped with us today. Fill in the short card below so our
+        welcome team can reach out, pray with you, and help you find your place here.
+      </p>
+    </div>
+    <img class="logo logo-large" src="logo.jpg" alt="Deeper Life Bible Church logo">
+  </div>
+</div>
+
+<div class="about">
+  <div class="container">
+    <p>
+      Deeper Life Campus Fellowship is the campus arm of Deeper Christian Life
+      Ministry, an interdenominational body of Bible-believing students and staff
+      across institutions of higher learning. We hold to the whole of Scripture,
+      from Genesis to Revelation, as our only rule of faith and conduct.
+    </p>
+    <p>
+      Whatever brought you to us today, we're grateful you came — and we'd love
+      the chance to know you better.
+    </p>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <form id="firstTimerForm" novalidate>
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Tell us a bit about you</h2>
+            <p class="sub">Every field marked <span class="req">*</span> is required. It takes less than two minutes.</p>
+          </div>
+        </div>
+
+        <div class="field" data-field="name">
+          <label for="name">Full name <span class="req">*</span></label>
+          <input type="text" id="name" name="name" placeholder="e.g. Amaka Johnson" autocomplete="name">
+          <p class="field-error">Please enter your name.</p>
+        </div>
+
+        <div class="field" data-field="department">
+          <label for="department">Department <span class="req">*</span></label>
+          <input type="text" id="department" name="department" placeholder="e.g. Engineering, 200 Level">
+          <p class="field-error">Please enter your department.</p>
+        </div>
+
+        <div class="field" data-field="hostel">
+          <label for="hostel">Hostel / place of residence <span class="req">*</span></label>
+          <input type="text" id="hostel" name="hostel" placeholder="e.g. Government hostel, Block C">
+          <p class="field-error">Please enter your hostel.</p>
+        </div>
+
+        <div class="field" data-field="phone">
+          <label for="phone">Phone number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 08012345678" autocomplete="tel">
+          <p class="field-error">Please enter a valid phone number.</p>
+        </div>
+
+        <div class="field" data-field="takeaway">
+          <label for="takeaway">What's your takeaway from today's message? <span class="req">*</span></label>
+          <textarea id="takeaway" name="takeaway" placeholder="Share what stood out to you..."></textarea>
+          <p class="field-error">Please share a short takeaway.</p>
+        </div>
+
+        <div class="field" data-field="prayer">
+          <label for="prayer">Prayer request (optional)</label>
+          <textarea id="prayer" name="prayer" placeholder="Anything you'd like us to pray with you about..."></textarea>
+        </div>
+
+        <div class="field" data-field="nextweek">
+          <label>Will we see you next week? <span class="req">*</span></label>
+          <div class="yesno">
+            <label><input type="radio" name="nextweek" value="Yes"><span>Yes</span></label>
+            <label><input type="radio" name="nextweek" value="No"><span>No</span></label>
+          </div>
+          <p class="field-error">Please let us know if we'll see you again.</p>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="submitReply">Submit reply</button>
+          <p class="hint">Your details are sent straight to our welcome team — nothing else to do after this.</p>
+        </div>
+
+        <p class="status" id="statusMsg" hidden></p>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <img class="logo logo-small" src="logo.jpg" alt="Deeper Life Bible Church logo">
+    <div>
+      <p class="tagline">Winning, building, and going deeper — together.</p>
+      <p>Deeper Life Campus Fellowship — handled with care by our welcome team.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

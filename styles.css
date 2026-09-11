@@ -1,0 +1,411 @@
+/* =====================================================================
+   Deeper Life Campus Fellowship — First Timer form
+   Styles only. Markup lives in index.html, behaviour in script.js.
+   ===================================================================== */
+
+:root{
+  --navy:       #0F1C31;
+  --navy-soft:  #24354F;
+  --navy-card:  #16233A;
+  --gold:       #C6992F;
+  --gold-soft:  #E1C27A;
+  --cream:      #F8F3E6;
+  --cream-dim:  #EFE7D3;
+  --forest:     #2F4A3C;
+  --ink:        #211F17;
+  --line:       #DBCEA9;
+  --error:      #A6432F;
+  --white:      #FFFFFF;
+}
+
+*{ box-sizing: border-box; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+html,body{
+  margin:0; padding:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3, .display{
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 0;
+}
+
+a{ color: inherit; }
+
+.container{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- Logo ---------- */
+
+.logo{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(198,153,47,0.35);
+}
+
+.logo-large{
+  justify-self: center;
+  width: 160px;
+  height: 160px;
+}
+
+.logo-small{
+  width: 30px;
+  height: 30px;
+}
+
+/* ---------- Header ---------- */
+
+.site-header{
+  border-bottom: 1px solid var(--line);
+  background: var(--cream);
+}
+
+.site-header .container{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.site-header .wordmark{
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: var(--navy);
+}
+
+.site-header .wordmark strong{
+  display: block;
+  font-weight: 600;
+}
+
+.site-header .wordmark span{
+  display: block;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--navy-soft);
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+  padding: 64px 0 48px;
+}
+
+.hero .grid{
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero h1{
+  font-size: clamp(2.1rem, 4.4vw, 3rem);
+  line-height: 1.14;
+  max-width: 14ch;
+}
+
+.hero .verse{
+  margin-top: 22px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--forest);
+  font-size: 1.05rem;
+  border-left: 2px solid var(--gold);
+  padding-left: 16px;
+}
+
+.hero .verse cite{
+  display: block;
+  font-style: normal;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--navy-soft);
+  margin-top: 6px;
+}
+
+.hero .lede{
+  margin-top: 20px;
+  max-width: 50ch;
+  font-size: 1.02rem;
+  color: var(--navy-soft);
+}
+
+/* ---------- About strip ---------- */
+
+.about{
+  padding: 4px 0 56px;
+}
+
+.about p{
+  max-width: 62ch;
+  color: #4B4636;
+  font-size: 0.98rem;
+}
+
+.about p + p{ margin-top: 14px; }
+
+/* ---------- Form panel ---------- */
+
+main{ padding-bottom: 72px; }
+
+.panel{
+  position: relative;
+  background: var(--navy-card);
+  color: var(--cream);
+  border-radius: 6px;
+  padding: 44px 36px;
+  overflow: hidden;
+}
+
+.panel::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(198,153,47,0.35);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.panel .panel-head{
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.panel h2{
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.panel .sub{
+  color: #B9C2D0;
+  font-size: 0.94rem;
+  margin-top: 6px;
+}
+
+.field{
+  margin-bottom: 24px;
+}
+
+.field label{
+  display: block;
+  font-size: 0.92rem;
+  color: #DCE3EC;
+  margin-bottom: 8px;
+}
+
+.field .req{ color: var(--gold-soft); }
+
+.field input[type="text"],
+.field input[type="tel"],
+.field textarea{
+  width: 100%;
+  background: #1D2C46;
+  border: 1px solid #3A4C68;
+  border-radius: 4px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 13px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{ color: #7C8AA0; }
+
+.field input:hover,
+.field textarea:hover{
+  border-color: #56698A;
+}
+
+.field input:focus,
+.field textarea:focus{
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198,153,47,0.22);
+}
+
+.field textarea{
+  resize: vertical;
+  min-height: 88px;
+}
+
+/* ---------- Yes / No toggle (with hover state) ---------- */
+
+.yesno{
+  display: flex;
+  gap: 10px;
+  background: #1D2C46;
+  border: 1px solid #3A4C68;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.yesno label{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 3px;
+  padding: 11px 14px;
+  cursor: pointer;
+  color: #B9C2D0;
+  font-size: 0.95rem;
+  margin: 0;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.yesno input{
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+}
+
+.yesno label:hover{
+  background: rgba(198,153,47,0.16);
+  color: var(--white);
+}
+
+.yesno label:has(input:checked){
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.yesno label:has(input:checked):hover{
+  background: var(--gold-soft);
+}
+
+.yesno label:has(input:focus-visible){
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.field-error{
+  color: #F0B7A8;
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: none;
+}
+
+.field.invalid input,
+.field.invalid textarea{ border-color: var(--error); }
+.field.invalid .yesno{ border-color: var(--error); }
+.field.invalid .field-error{ display: block; }
+
+/* ---------- Actions ---------- */
+
+.actions{
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 40px;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+
+.btn:active{ transform: scale(0.98); }
+
+.btn-primary{
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  color: #1F1706;
+}
+
+.btn-primary:hover{ background: var(--gold-soft); }
+
+.btn:disabled{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.actions .hint{
+  color: #8D9AAE;
+  font-size: 0.82rem;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.status{
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 4px;
+  background: #22314C;
+  color: #E9EEF3;
+  font-size: 0.92rem;
+  border-left: 3px solid var(--gold);
+}
+
+.status.error{
+  border-left-color: var(--error);
+  background: #3A2A26;
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+  border-top: 1px solid var(--line);
+  padding: 32px 0 48px;
+}
+
+footer .container{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+footer p{
+  margin: 0;
+  color: var(--navy-soft);
+  font-size: 0.86rem;
+}
+
+footer .tagline{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--forest);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 780px){
+  .hero .grid{ grid-template-columns: 1fr; }
+  .hero .logo-large{ order: -1; width: 96px; height: 96px; }
+  .panel{ padding: 30px 22px; }
+  .yesno{ flex-direction: column; }
+}
