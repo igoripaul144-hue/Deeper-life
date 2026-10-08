@@ -18,9 +18,9 @@
 // 4. Under "Account" > "General", copy your PUBLIC KEY.
 // 5. Paste all three below, replacing the placeholder text.
 // -----------------------------------------------------------------
-const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // <-- from EmailJS "Account" page
-const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // <-- from EmailJS "Email Services" page
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // <-- from EmailJS "Email Templates" page
+const EMAILJS_PUBLIC_KEY  = "PGAvi0ujtgskn4cse";   // <-- from EmailJS "Account" page
+const EMAILJS_SERVICE_ID  = "service_7psfdql";   // <-- from EmailJS "Email Services" page
+const EMAILJS_TEMPLATE_ID = "template_78snfzh";  // <-- from EmailJS "Email Templates" page
 // =====================================================================
 
 emailjs.init(EMAILJS_PUBLIC_KEY);
